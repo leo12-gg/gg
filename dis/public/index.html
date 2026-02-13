@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseChat</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="guilds">
+        <button class="guild active" data-server="gg">GG</button>
+        <button class="guild" data-server="dev">DEV</button>
+        <button class="guild" data-server="music">MUS</button>
+      </aside>
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">P</div>
+          <div>
+            <div class="brand-title">PulseChat</div>
+            <div class="brand-subtitle">Live rooms</div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Rooms</div>
+          <div class="rooms" id="roomsList">
+            <button class="room-button active" data-room="general"># general</button>
+            <button class="room-button" data-room="gaming"># gaming</button>
+            <button class="room-button" data-room="music"># music</button>
+            <button class="room-button" data-room="random"># random</button>
+          </div>
+          <div class="room-create">
+            <input id="newRoomName" type="text" placeholder="new-room" maxlength="24" />
+            <button id="addRoomBtn">Add Room</button>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-title">Voice Channels</div>
+          <div class="voice-channels">
+            <button class="voice-button" data-voice="lounge">🔊 Lounge</button>
+            <button class="voice-button" data-voice="raid">🔊 Raid Squad</button>
+          </div>
+        </div>
+        <div class="profile">
+          <input id="nameInput" type="text" maxlength="24" />
+          <button id="saveName">Set name</button>
+          <select id="presenceSelect">
+            <option value="online">Online</option>
+            <option value="away">Away</option>
+            <option value="busy">Busy</option>
+          </select>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div class="room-info">
+            <div id="roomTitle"># general</div>
+            <div class="room-meta">
+              <span id="roomStatus">Connected</span>
+            </div>
+          </div>
+          <div class="top-actions">
+            <button id="inviteBtn">Invite</button>
+            <button id="searchBtn">Search</button>
+            <button id="settingsBtn">Settings</button>
+          </div>
+        </header>
+        <section class="content">
+          <div class="chat">
+            <div id="messages" class="messages"></div>
+            <div id="typing" class="typing"></div>
+            <div class="composer">
+              <input id="messageInput" type="text" placeholder="Message #general" />
+              <button id="sendBtn">Send</button>
+            </div>
+          </div>
+          <aside class="members">
+            <div class="section-title">Members</div>
+            <div id="memberList" class="member-list"></div>
+            <div class="section-title">Voice Now</div>
+            <div id="voiceList" class="voice-list"></div>
+            <div class="voice-controls">
+              <button id="joinVoice">Join Voice</button>
+              <button id="leaveVoice" disabled>Leave Voice</button>
+              <button id="muteBtn" disabled>Mute</button>
+              <button id="deafenBtn" disabled>Deafen</button>
+            </div>
+            <div class="feature-cards">
+              <div class="feature-card">
+                <div class="feature-title">Threads</div>
+                <div class="feature-sub">Organize deep conversations</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-title">Presence</div>
+                <div class="feature-sub">Live status & activity</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-title">Reactions</div>
+                <div class="feature-sub">Quick emoji feedback</div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #0f111a;
+  color: #e6e9f2;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 72px 260px 1fr;
+  min-height: 100vh;
+}
+
+.guilds {
+  background: #0d101a;
+  border-right: 1px solid #22263a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+}
+
+.guild {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: #1b1f30;
+  color: #e6e9f2;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.guild.active {
+  border-color: #5b7cfa;
+  background: #1b2238;
+}
+.sidebar {
+  background: #151826;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-right: 1px solid #22263a;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 42px;
+  width: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5b7cfa, #9d7bff);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.brand-title {
+  font-weight: 600;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  color: #9aa4c2;
+}
+
+.section-title {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9aa4c2;
+  margin-bottom: 10px;
+}
+
+.rooms,
+.voice-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.room-create {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.room-create input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1b1f30;
+  color: inherit;
+}
+
+.room-create button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1b1f30;
+  color: inherit;
+  cursor: pointer;
+}
+.room-button,
+.voice-button {
+  border: 1px solid transparent;
+  background: #1b1f30;
+  color: inherit;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.room-button.active {
+  border-color: #5b7cfa;
+  background: #1b2238;
+}
+
+.profile {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+}
+
+.profile input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1b1f30;
+  color: inherit;
+}
+
+.profile button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #5b7cfa;
+  color: white;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 26px;
+  border-bottom: 1px solid #22263a;
+  background: #121522;
+}
+
+.room-meta {
+  font-size: 12px;
+  color: #9aa4c2;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.top-actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #1b1f30;
+  color: inherit;
+  cursor: pointer;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 0;
+  flex: 1;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 26px;
+  gap: 16px;
+  border-right: 1px solid #22263a;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message {
+  display: grid;
+  gap: 4px;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #9aa4c2;
+}
+
+.message-body {
+  font-size: 15px;
+}
+
+.typing {
+  font-size: 12px;
+  color: #9aa4c2;
+  min-height: 18px;
+}
+
+.composer {
+  display: flex;
+  gap: 10px;
+}
+
+.composer input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  background: #1b1f30;
+  color: inherit;
+}
+
+.composer button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  background: #5b7cfa;
+  color: white;
+  cursor: pointer;
+}
+
+.members {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.member-list {
+  display: grid;
+  gap: 10px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #1b1f30;
+}
+
+.member-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.member-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  color: #0f111a;
+}
+
+.member-avatar.speaking {
+  outline: 2px solid #5b7cfa;
+  outline-offset: 2px;
+}
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.member-name {
+  font-size: 14px;
+}
+
+.member-status {
+  font-size: 11px;
+  color: #9aa4c2;
+}
+
+.voice-list {
+  display: grid;
+  gap: 10px;
+}
+
+.voice-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #18203a;
+  border: 1px solid #263154;
+}
+
+.voice-item .member-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.voice-badge {
+  background: #5b7cfa;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.voice-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.voice-controls button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #1b1f30;
+  color: inherit;
+}
+
+.feature-cards {
+  display: grid;
+  gap: 10px;
+}
+
+.reaction-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.reaction {
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: #1b1f30;
+  border: 1px solid #263154;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.reaction.add {
+  background: #18203a;
+}
+.feature-card {
+  padding: 12px;
+  border-radius: 12px;
+  background: #1b1f30;
+}
+
+.feature-title {
+  font-weight: 600;
+}
+
+.feature-sub {
+  font-size: 12px;
+  color: #9aa4c2;
+}
+
+@media (max-width: 980px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .members {
+    border-top: 1px solid #22263a;
+  }
+}
